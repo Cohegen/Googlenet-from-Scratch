@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+##defining the inception module
 class InceptionModule(nn.Module):
     def __init__(
         self,
@@ -56,7 +57,9 @@ class InceptionModule(nn.Module):
             self.branch3(x),
             self.branch4(x)
         ], dim=1)
+        
 
+##defining the general Googlenet architecture
 class GoogleNet(nn.Module):
     def __init__(self, in_channels=3, num_classes=10):
         super().__init__()
