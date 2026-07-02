@@ -25,7 +25,7 @@ class InceptionModule(nn.Module):
         # Branch 2
         self.branch2 = nn.Sequential(
             nn.Conv2d(in_channels, red_3x3, kernel_size=1),
-            nn.BatchNorm2d(red_3x3), # Added BatchNorm
+            nn.BatchNorm2d(red_3x3), # Added Batchnorm for training stability
             nn.ReLU(inplace=True),
             nn.Conv2d(red_3x3, out_3x3, kernel_size=3, padding=1),
             nn.BatchNorm2d(out_3x3), # Added BatchNorm
